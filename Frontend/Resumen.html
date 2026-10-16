@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumen del pedido</title>
+        <link rel="stylesheet" href="CSS/Resumen.css">
+    </head>
+    <body>
+
+        <header class="encabezado">
+            <button class="menu-boton" id="menu-boton" type="button" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="menu" id="menu">
+                <a href="Cafeteria.html">Inicio</a>
+                <a href="#">Menú</a>
+                <a href="#">Pedidos</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <main class="contenido">
+
+            <section class="introduccion">
+                <h1>Revisa tu pedido</h1>
+                <p>Estos son los datos que mandaste. Si algo no está bien, regresa al formulario y corrígelo.</p>
+            </section>
+
+            <section class="tarjeta">
+                <h2>Resumen del pedido</h2>
+                <p class="subtitulo">Estos son los datos que llenaste.</p>
+                <p class="aviso" id="sin-datos" hidden>
+                    No hay ningún pedido para mostrar. <a href="Cafeteria.html">Haz tu pedido aquí</a>.
+                </p>
+
+                <div id="detalle">
+                    <dl class="datos">
+                        <div class="fila"><dt>Cliente</dt><dd id="cliente"></dd></div>
+                        <div class="fila"><dt>Producto</dt><dd id="producto"></dd></div>
+                        <div class="fila"><dt>Cantidad</dt><dd id="cantidad"></dd></div>
+                        <div class="fila"><dt>Tamaño de bebida</dt><dd id="tamano"></dd></div>
+                        <div class="fila"><dt>Para llevar</dt><dd id="llevar"></dd></div>
+                        <div class="fila apilada"><dt>Observaciones</dt><dd id="observaciones"></dd></div>
+                    </dl>
+                    <div class="botones">
+                        <a class="boton secundario" id="boton-editar" href="Cafeteria.html">Editar pedido</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="JS/Resumen.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+}
+ 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #f6efe4;
+    color: #2e2118;
+}
+ 
+[hidden] {
+    display: none !important;
+}
+ 
+.encabezado {
+    background: #3a2415;
+    color: #ffffff;
+    padding: 12px 64px;
+    position: relative;
+}
+ 
+.menu {
+    display: flex;
+    gap: 32px;
+}
+ 
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+}
+ 
+.menu a:hover {
+    text-decoration: underline;
+}
+ 
+.menu-boton {
+    display: none;
+    background: none;
+    border: 0;
+    padding: 4px 0;
+    cursor: pointer;
+    width: 24px;
+}
+ 
+.menu-boton span {
+    display: block;
+    height: 2px;
+    background: #ffffff;
+    margin: 4px 0;
+}
+ 
+.contenido {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 64px;
+    padding: 64px;
+}
+ 
+.introduccion {
+    width: 420px;
+    flex: none;
+}
+ 
+.introduccion h1 {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.15;
+}
+ 
+.introduccion p {
+    margin: 16px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #7c6b5a;
+}
+ 
+.tarjeta {
+    width: 640px;
+    background: #ffffff;
+    border: 1px solid #d8c8b2;
+    border-radius: 12px;
+    padding: 32px;
+}
+ 
+.tarjeta h2 {
+    margin: 0;
+    font-size: 24px;
+}
+ 
+.subtitulo {
+    margin: 4px 0 20px;
+    font-size: 13px;
+    color: #7c6b5a;
+}
+ 
+.aviso {
+    margin: 0;
+    line-height: 1.5;
+}
+ 
+.aviso a {
+    color: #6b4226;
+    font-weight: 600;
+}
+ 
+.datos {
+    margin: 0 0 20px;
+    border-top: 1px solid #eadfcd;
+}
+ 
+.fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eadfcd;
+}
+ 
+.fila dt {
+    color: #7c6b5a;
+}
+ 
+.fila dd {
+    margin: 0;
+    font-weight: 500;
+    text-align: right;
+}
+ 
+.fila.apilada {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+ 
+.fila.apilada dd {
+    text-align: left;
+}
+ 
+
+.botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+ 
+.boton {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 6px;
+    border: 1px solid #d8c8b2;
+    font: 700 14px/1 Arial, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+ 
+.boton.secundario {
+    background: #ffffff;
+    color: #2e2118;
+}
+ 
+.boton.principal {
+    background: #6b4226;
+    border-color: #6b4226;
+    color: #ffffff;
+}
+ 
+.boton:hover {
+    opacity: 0.9;
+}
+ 
+@media (max-width: 1100px) {
+    .encabezado {
+        padding: 12px 32px;
+    }
+ 
+    .menu {
+        gap: 20px;
+    }
+ 
+    .contenido {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+        padding: 40px 32px 48px;
+    }
+ 
+    .introduccion,
+    .tarjeta {
+        width: auto;
+    }
+ 
+    .introduccion h1 {
+        font-size: 28px;
+    }
+ 
+    .introduccion p {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 6px 20px;
+    }
+ 
+    .menu-boton {
+        display: block;
+    }
+ 
+    /* menu desplegable */
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: #ffffff;
+        border-bottom: 1px solid #d8c8b2;
+        z-index: 10;
+    }
+ 
+    .menu.abierto {
+        display: flex;
+    }
+ 
+    .menu a {
+        color: #2e2118;
+        padding: 16px 20px;
+        border-top: 1px solid #eadfcd;
+    }
+ 
+    .contenido {
+        padding: 20px 16px 28px;
+    }
+ 
+    .introduccion {
+        display: none;
+    }
+ 
+    .tarjeta {
+        padding: 21px;
+    }
+ 
+    .tarjeta h2 {
+        font-size: 20px;
+    }
+ 
+    .fila {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+ 
+    .fila dd {
+        text-align: left;
+    }
+ 
+    .botones {
+        flex-direction: column-reverse;
+    }
+ 
+    .boton {
+        width: 100%;
+    }
+}
+ 

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de pedido</title>
+  <link rel="stylesheet" href="CSS/Cafeteria.css">
+</head>
+<body>
+ 
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Menú</a></li>
+        <li><a href="#">Pedidos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+ 
+  <main>
+
+    <section class="intro">
+      <h1>Pide tu bebida en línea</h1>
+      <p>Llena el formulario y registra tu pedido en menos de un minuto.</p>
+    </section>
+ 
+    <section class="formulario">
+      <form id="formPedido" action="http://localhost:3000/pedido" method="POST">
+
+        <h2>Nuevo pedido</h2>
+
+        <p class="ayuda">
+          Llena los campos necesarios para registrar tu pedido.
+        </p>
+
+        <div class="campo">
+          <label for="cliente">Nombre del Cliente</label>
+          <input type="text" id="cliente" name="cliente" required>
+        </div>
+ 
+        <div class="fila">
+
+          <div class="campo">
+            <label for="producto">Producto</label>
+
+            <select id="producto" name="producto">
+              <option value="">Selecciona un producto</option>
+              <option value="Café americano">Café americano</option>
+              <option value="Latte">Latte</option>
+              <option value="Capuchino">Capuchino</option>
+              <option value="Té chai">Té chai</option>
+              <option value="Frappé">Frappé</option>
+            </select>
+          </div>
+ 
+          <div class="campo">
+            <label for="cantidad">Cantidad</label>
+
+            <input
+              type="number"
+              id="cantidad"
+              name="cantidad"
+              value="1"
+              min="1"
+            >
+
+            <small>Mínimo 1</small>
+          </div>
+
+        </div>
+ 
+        <div class="fila">
+
+          <div class="campo">
+            <p class="etiqueta">Tamaño de bebida</p>
+
+            <div class="opciones">
+              <label>
+                <input type="radio" name="tamano" value="Chico">
+                Chico
+              </label>
+
+              <label>
+                <input type="radio" name="tamano" value="Mediano" checked>
+                Mediano
+              </label>
+
+              <label>
+                <input type="radio" name="tamano" value="Grande">
+                Grande
+              </label>
+            </div>
+          </div>
+ 
+          <div class="campo">
+            <p class="etiqueta">Pedido</p>
+
+            <div class="opciones">
+              <label>
+                <input
+                  type="checkbox"
+                  id="llevar"
+                  name="llevar"
+                  value="Sí"
+                >
+                Pedido para llevar
+              </label>
+            </div>
+          </div>
+
+        </div>
+ 
+        <div class="fila">
+
+          <div class="campo">
+            <p class="etiqueta">
+              ¿Quieres hacer una observación?
+            </p>
+
+            <div class="opciones">
+              <label>
+                <input
+                  type="radio"
+                  name="observacion"
+                  id="obsSi"
+                  value="Sí"
+                  checked
+                >
+                Sí
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="observacion"
+                  id="obsNo"
+                  value="No"
+                >
+                No
+              </label>
+            </div>
+          </div>
+
+        </div>
+ 
+        <div class="fila" id="cajaObservaciones">
+
+          <div class="campo">
+            <label for="observaciones">
+              Observaciones opcionales del servicio
+            </label>
+
+            <textarea
+              id="observaciones"
+              name="observaciones"
+              rows="4"
+              placeholder="Por favor deje su mensaje"
+            ></textarea>
+          </div>
+
+        </div>
+ 
+        <div class="botones">
+
+          <button type="reset" class="secundario">
+            Limpiar campos
+          </button>
+
+          <button type="submit">
+            Registrar pedido
+          </button>
+
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+ 
+  <script src="JS/Cafeteria.js"></script>
+
+</body>
+</html>
