@@ -1,7 +1,9 @@
+// conexión con MySQL
 const mysql = require('mysql2/promise');
 
 require('dotenv').config();
 
+// abre la conexión con la base de datos usando los datos del .env
 async function conexion() {
     const db = await mysql.createConnection({
         host: process.env.DB_HOST,

@@ -1,8 +1,8 @@
 const conexion = require('../Configuracion/database');
 
+// guarda el pedido en la tabla pedidos y regresa su id
 async function registrarPedido(cliente, producto, cantidad, tamano, llevar, observaciones) {
     const db = await conexion();
-
     const sql = `
         INSERT INTO pedidos (cliente, producto, cantidad, tamano, llevar, observaciones)
         VALUES (?,?,?,?,?,?)`;
@@ -16,8 +16,10 @@ async function registrarPedido(cliente, producto, cantidad, tamano, llevar, obse
         observaciones
     ]);
 
+    // cierra la conexión cuando termina
     await db.end();
 
+    // id que la base le puso al pedido
     return resultado.insertId;
 }
 
